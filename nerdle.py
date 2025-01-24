@@ -88,7 +88,7 @@ def main():
     print("Generating equations...")
     print("Clues:", clues)
     # equations = generate_equations()
-    equations = open('nerdle.txt', 'r').read().splitlines()
+    equations = open('./nerdle.txt', 'r').read().splitlines()
     possible_solutions = filter_equations(equations, clues, known_positions, known_wrong, known_wrong_positions)
     
     print("Possible solutions:")
