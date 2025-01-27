@@ -91,7 +91,7 @@ def main():
     equations = open('./nerdle.txt', 'r').read().splitlines()
     possible_solutions = filter_equations(equations, clues, known_positions, known_wrong, known_wrong_positions)
     
-    print("Possible solutions:")
+    print("Possible solutions:", len(possible_solutions))
     for solution in possible_solutions:
         print(solution)
 
