@@ -81,10 +81,10 @@ def matches_clues(equation, clues, known_positions, known_wrong, known_wrong_pos
     return True
 
 def main():
-    clues = ["1", "*", "2", "0"]  # Example clues
-    known_positions = ["", "", "", "", "", "1", "", ""]
-    known_wrong_positions = [[""], ["*"], ["2"], ["*", "1"], ["="], ["="], ["0"], ["1"]]
-    known_wrong = ["7", "+", "6", "3", "4", "5"]
+    clues = ["", "", ""]  # All the entered clused that you know appear in the final result. right num in wrong position and right in right position. Order does not matter. Doesn't need to include the = since all include that.
+    known_positions = ["", "", "", "", "", "", "", ""] #Only includes the right number in the right position. If the = is in the right spot, place that here.
+    known_wrong_positions = [[""], [""], [""], [""], [""], [""], [""], [""]] #Place results from attempts here. Create a list for each slot based on the accumulated clues 
+    known_wrong = ["", "", "", ""] #Enter all the numbers and operators that you know aren't in the final result.
     print("Generating equations...")
     print("Clues:", clues)
     # equations = generate_equations()
@@ -94,6 +94,9 @@ def main():
     print("Possible solutions:", len(possible_solutions))
     for solution in possible_solutions:
         print(solution)
+    
+    #TODO: Make entering the clues more user friendly
+    #TODO: Create an algorithm that can prioritize the most likely solutions
 
 if __name__ == "__main__":
     main()
